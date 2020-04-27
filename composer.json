@@ -8,7 +8,9 @@
             "email": "dhaval.joshi@viitor.cloud"
         }
     ],
-    "require": {},
+    "require": {
+        "php": "^7.0.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
