@@ -1,0 +1,29 @@
+{
+    "name": "mitul/lara-addressbook",
+    "description": "Provide the addressbook to store multiple address at one place",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mitul",
+            "email": "mitul.koradiya@viitor.cloud"
+        }
+    ],
+    "require": {
+        "php": "^7.0.0",
+        "laravel/laravel": "^5.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "mitul\\addresses\\AddressesServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Mitul\\Addresses\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
