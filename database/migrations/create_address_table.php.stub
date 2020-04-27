@@ -13,13 +13,12 @@ class CreateAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('address', function (Blueprint $table) {
+        Schema::create($this->getTableName(), function (Blueprint $table) {
             $table->id();
             $table->morphs('model');
             $table->string('formated_address',200)->nullable();
             $table->string('latitude',50)->nullable();
             $table->string('longitude',50)->nullable();
-            $table->tinyInteger('is_primary')->default(0)->comment('1 - Primary, 0 - Non Primary');
             $table->tinyInteger('order')->nullable();
             $table->json('extra_attributes')->nullable();
             $table->timestamps();
@@ -33,6 +32,11 @@ class CreateAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('address');
+        Schema::dropIfExists($this->getTableName());
+    }
+
+    public function getTableName()
+    {
+        return config('addressable.tables.addressable');
     }
 }

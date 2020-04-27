@@ -1,16 +1,12 @@
 <?php
 
-namespace mitul\addresses;
+namespace Viitortest\Addressable;
 
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Mitul\Addresses\Models\Address;
+use Viitortest\Addressable\Models\Address;
 
 Trait HasAddress
 {
-   
-    // abstract public function morphMany($related, $name, $type = null, $id = null, $localKey = null);
-    
     /**
      * @return MorphMany
      */
@@ -28,13 +24,20 @@ Trait HasAddress
     }
 
     /**
+     * Remove address to address table.
+     */
+    public function removeAddress()
+    {
+        return $this->address()->delete();
+    }
+
+    /**
      * return primary address
      */
     public function getPrimaryAddress()
     {
         $this->load(['address' => function($query) {
-            $query->where("is_primary",1);
-            $query->orderby("order");
+           $query->orderby("order")->first();
         }]);
     }
 

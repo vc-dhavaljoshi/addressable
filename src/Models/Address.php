@@ -1,6 +1,6 @@
 <?php
 
-namespace mitul\addresses\Models;
+namespace Viitortest\Addressable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -8,15 +8,18 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Address extends Model
 {
     /**
-     * @var string
+     * @return \Illuminate\Config\Repository|mixed|string
      */
-    protected $table = 'address';
+    public function getTable()
+    {
+        return config('addressable.tables.addressable');
+    }
 
     /**
      * @var array
      */
     protected $fillable = [
-        'formated_address', 'latitude', 'longitude', 'is_primary', 'order', 'extra_attributes'
+        'formatted_address', 'latitude', 'longitude', 'order', 'extra_attributes'
     ];
 
     /**

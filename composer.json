@@ -1,11 +1,11 @@
 {
-    "name": "mitul/lara-addressbook",
-    "description": "Provide the addressbook to store multiple address at one place",
+    "name": "viitortest/addressable",
+    "description": "Provide the address book to store multiple address at one place",
     "license": "MIT",
     "authors": [
         {
-            "name": "Mitul",
-            "email": "mitul.koradiya@viitor.cloud"
+            "name": "Dhaval Joshi",
+            "email": "dhaval.joshi@viitor.cloud"
         }
     ],
     "require": {
@@ -15,13 +15,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "mitul\\addresses\\AddressesServiceProvider"
+                "viitortest\\addressable\\AddressesServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Mitul\\Addresses\\": "src/"
+            "Viitortest\\Addressable\\": "src/"
         }
     },
     "minimum-stability": "dev",

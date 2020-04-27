@@ -1,6 +1,6 @@
 <?php
 
-namespace mitul\addresses;
+namespace Viitortest\Addressable;
 
 use Illuminate\Support\ServiceProvider;
 
