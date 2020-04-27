@@ -4,7 +4,7 @@ return [
      // Manage autoload migrations
      'autoload_migrations' => true,
 
-     // Contacts Database Tables
+     // Address Database Tables
      'tables' => [
          'addressable' => 'addressable',
      ],

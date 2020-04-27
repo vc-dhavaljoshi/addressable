@@ -18,9 +18,9 @@ Trait HasAddress
     /**
      * Add single or multiple address to address table
      */
-    public function addAddress($data)
+    public function addAddress($request)
     {
-        return $this->address()->create($data);
+        return $this->address()->create($request);
     }
 
     /**
@@ -36,9 +36,7 @@ Trait HasAddress
      */
     public function getPrimaryAddress()
     {
-        $this->load(['address' => function($query) {
-           $query->orderby("order")->first();
-        }]);
+        return $this->address()->orderby("order")->first();
     }
 
     /**
@@ -46,8 +44,6 @@ Trait HasAddress
      */
     public function getAddress()
     {
-        $this->load(['address' => function($query) {            
-            $query->orderby("order");
-        }]);
+        return $this->address()->orderby("order")->get();
     }
 }
