@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "viitortest\\addressable\\AddressesServiceProvider"
+                "Viitortest\\Addressable\\AddressesServiceProvider"
             ]
         }
     },
